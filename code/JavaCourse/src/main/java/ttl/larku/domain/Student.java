@@ -5,10 +5,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+import org.jetbrains.annotations.NotNull;
 
-public class Student {
-	
-	public enum Status { 
+public class Student implements Comparable<Student>{
+
+	public enum Status {
 		FULL_TIME,
 		PART_TIME,
 		HIBERNATING
@@ -95,5 +96,10 @@ public class Student {
 	@Override
 	public int hashCode() {
 		return Objects.hash(id, name, dob, phoneNumbers, status);
+	}
+
+	@Override
+	public int compareTo(@NotNull Student other) {
+		return Integer.compare(this.id, other.id);
 	}
 }
