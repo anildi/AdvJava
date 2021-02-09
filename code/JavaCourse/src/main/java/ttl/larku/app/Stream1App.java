@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import ttl.larku.dao.inmemory.InMemoryCourseDAO;
 import ttl.larku.dao.inmemory.InMemoryStudentDAO;
 import ttl.larku.domain.Student;
@@ -42,15 +43,33 @@ public class Stream1App {
 	public void streams1() {
 		List<Student> students = studentService.getAllStudents();
 
-		List<String> fullTimeNames = students.stream()
-				.peek(s -> System.out.println("Peek 1 with: " + s))
-				.filter(s -> s.getStatus() == Student.Status.FULL_TIME)
-				.peek(s -> System.out.println("Peek 2 with: " + s))
-				.map(s -> s.getName())
-				.peek(s -> System.out.println("Peek 3 with: " + s))
-				.collect(Collectors.toList());
+//		List<String> fullTimeNames = students.stream()
+//				.peek(s -> System.out.println("Peek 1 with: " + s))
+//				.filter(s -> s.getStatus() == Student.Status.FULL_TIME)
+//				.peek(s -> System.out.println("Peek 2 with: " + s))
+//				.map(s -> s.getName())
+//				.peek(s -> System.out.println("Peek 3 with: " + s))
+//				.collect(Collectors.toList());
+//		System.out.println("FullTime Student Names: " + fullTimeNames);
 
-		System.out.println("FullTime Student Names: " + fullTimeNames);
+
+
+	}
+
+	public void streams2() {
+		List<Student> students = studentService.getAllStudents();
+
+		long count = students.stream()
+				.filter(s -> s.getStatus() == Student.Status.FULL_TIME)
+				.collect(Collectors.counting());
+
+		String csv = students.stream()
+				.filter(s -> s.getStatus() == Student.Status.FULL_TIME)
+				.map(s -> s.getName())
+				.collect(Collectors.joining(", "));
+
+
+		System.out.println("csv: " + csv);
 	}
 
 	public <T> List<T> bestChecker(List<T> input, Predicate<T> checker) {
