@@ -1,11 +1,12 @@
 package ttl.larku.cust.dao;
 
 import java.util.ResourceBundle;
+import ttl.larku.cust.service.CustomerService;
 
 /**
  * @author whynot
  */
-public class DaoFactory {
+public class TheFactory {
 
     public static CustomerDAO getDao() {
         ResourceBundle bundle = ResourceBundle.getBundle("customerapp");
@@ -18,5 +19,12 @@ public class DaoFactory {
             default:
                 throw new RuntimeException("Unknown profile: " + profile);
         }
+    }
+
+    public static CustomerService getCustomerService() {
+        CustomerDAO dao = getDao();
+        CustomerService cs = new CustomerService(dao);
+
+        return cs;
     }
 }

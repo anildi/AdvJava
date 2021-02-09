@@ -4,9 +4,6 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.Collection;
 import ttl.larku.cust.dao.CustomerDAO;
-import ttl.larku.cust.dao.DaoFactory;
-import ttl.larku.cust.dao.InMemoryCustomerDAO;
-import ttl.larku.cust.dao.JPACustomerDAO;
 import ttl.larku.cust.domain.Customer;
 
 /**
@@ -17,7 +14,11 @@ public class CustomerService {
     //private CustomerDAO customerDAO = new CustomerDAO();
     //private JPACustomerDAO customerDAO = new JPACustomerDAO();
 
-    private CustomerDAO customerDAO = DaoFactory.getDao();
+    private CustomerDAO customerDAO; //= DaoFactory.getDao();
+
+    public CustomerService(CustomerDAO customerDAO) {
+        this.customerDAO = customerDAO;
+    }
 
     //private CustomerDAO customerDAO = new JPACustomerDAO();
 //    private CustomerDAO customerDAO = new InMemoryCustomerDAO();
