@@ -1,6 +1,8 @@
 package ttl.larku.dao.inmemory;
 
+import java.util.Collections;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.stream.Collectors;
 import ttl.larku.dao.BaseDAO;
 import ttl.larku.domain.Student;
 
@@ -40,8 +42,21 @@ public class InMemoryStudentDAO implements BaseDAO<Student>{
 	}
 
 	//TODO - fix for List
+
+	/**
+	 *
+	 * @return a List sorted by id
+	 */
 	public List<Student> getAll() {
-		return new ArrayList<Student>(students.values());
+//		List<Student> col = new ArrayList<Student>(students.values());
+
+		var col = new ArrayList<Student>(students.values());
+		Collections.sort(col, (s1, s2) -> Integer.compare(s1.getId(), s2.getId()));
+		return col;
+
+//        return students.values().stream()
+//				.sorted((s1, s2) -> Integer.compare(s1.getId(), s2.getId()))
+//                .collect(Collectors.toList());
 	}
 
 	public void deleteStore() {
