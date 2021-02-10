@@ -18,15 +18,6 @@ public class Student implements Comparable<Student>{
 	private int id;
 	private String name;
 
-	public String getDescr() {
-		return descr;
-	}
-
-	public void setDescr(String descr) {
-		this.descr = descr;
-	}
-
-	private String descr;
 	private LocalDate dob;
 	private List<String> phoneNumbers = new ArrayList<>();
 	

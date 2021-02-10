@@ -41,12 +41,12 @@ public class FuntionatorApp {
 		Extractor ne = new NameExtractor();
 		List<String> names = slightLyBetterExtractor(students, ne);
 
-		List<String> descriptions = slightLyBetterExtractor(students, s -> s.getDescr());
-
-		System.out.println("All Student Names: " + names);
-		for(String s : descriptions) {
-			System.out.println(s);
-		}
+////		List<String> descriptions = slightLyBetterExtractor(students, s -> s.getDescr());
+//
+//		System.out.println("All Student Names: " + names);
+//		for(String s : descriptions) {
+//			System.out.println(s);
+//		}
 	}
 
 	public void callMoreBetterExtractor() {
@@ -56,12 +56,12 @@ public class FuntionatorApp {
 
 		List<String> names = moreBetterExtractor(students, ne);
 
-		List<String> descriptions = moreBetterExtractor(students, s -> s.getDescr());
-
-		System.out.println("All Student Names: " + names);
-		for(String s : descriptions) {
-			System.out.println(s);
-		}
+//		List<String> descriptions = moreBetterExtractor(students, s -> s.getDescr());
+//
+//		System.out.println("All Student Names: " + names);
+//		for(String s : descriptions) {
+//			System.out.println(s);
+//		}
 
 		List<LocalDate> dobs = moreBetterExtractor(students, s -> s.getDob());
 		System.out.println("All Student DOB: " + dobs);
@@ -146,13 +146,13 @@ public class FuntionatorApp {
 		return result;
 	}
 
-	public List<String> getDescr(List<Student> input) {
-		List<String> result = new ArrayList<>();
-		for(Student s : input) {
-			result.add(s.getDescr());
-		}
-		return result;
-	}
+//	public List<String> getDescr(List<Student> input) {
+//		List<String> result = new ArrayList<>();
+//		for(Student s : input) {
+//			result.add(s.getDescr());
+//		}
+//		return result;
+//	}
 
 
 
