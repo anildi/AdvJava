@@ -24,6 +24,11 @@ public class Student implements Comparable<Student>{
 	private Status status;
 	
 	public Student() {
+		int i = 0;
+	}
+
+	public Student(String name) {
+		this.name = name;
 	}
 	
 	public Student(String name, LocalDate dob, Status status, String... phoneNums) {

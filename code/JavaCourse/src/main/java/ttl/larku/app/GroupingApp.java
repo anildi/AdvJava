@@ -54,6 +54,7 @@ public class GroupingApp {
 		Map<Student.Status, Long> statusMap4 = students.stream()
 				.collect(Collectors.groupingBy(s -> s.getStatus(), Collectors.counting()));
 
+		//Partitioning - students less than and gt 20 years old.
 		Map<Boolean, List<Student>> ltAndGt20 = students.stream()
                 .collect(Collectors.partitioningBy(s -> s.getDob().until(LocalDate.now(), ChronoUnit.YEARS) > 20));
 
