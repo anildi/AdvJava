@@ -1,6 +1,7 @@
 package ttl.larku.app;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
@@ -75,7 +76,24 @@ public class GenericsDemo {
 
     public void foo(Number n) {
 
+        List<String> ls = List.of("One", "two", "three");
+        frequency(ls, "one");
+
+        List<Integer> lint = List.of(1, 3, 3);
+        frequency(lint, 3);
     }
+
+    static int 	frequency(Collection<?> c, Object target) {
+       int freq = 0;
+       for(Object o : c) {
+           if(o.equals(target)) {
+               freq++;
+           }
+       }
+       return freq;
+    }
+
+    public static <T> void copy(List<? super T> xyz, List<? extends T> abc){}
 
 
 

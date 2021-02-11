@@ -3,7 +3,7 @@ package ttl.larku.reflect.validator;
 public class Car
 {
 	@MyNotNull
-    @MyLength(min = 4)
+    @MyLength(min = 4, max = 23)
     private String modelName;
 
 	@MyStockNumber

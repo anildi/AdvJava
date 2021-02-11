@@ -38,7 +38,7 @@ public class BasicDiscoveryExample {
 	/**
 	 * printBasicClassInfo prints the following class information:
 	 * <ul>
-	 * <li>Class name using getSimpleName
+	 * <li>Class name using getSimpleNamename = "java.util.concurrent.ConcurrentHashMap"
 	 * <li>Class type using isInterface and isEnumeration
 	 * <li>Class access modifiers using getModifiers
 	 * <li>Class package name using getPackage

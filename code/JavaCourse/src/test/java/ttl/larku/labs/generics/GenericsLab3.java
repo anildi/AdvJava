@@ -1,5 +1,6 @@
 package ttl.larku.labs.generics;
 
+import java.time.LocalDate;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -13,14 +14,14 @@ public class GenericsLab3 {
 
     //TODO - Change this class so that the 'testLocalDateValueHolder'
     // method below compiles and runs successfully.
-    class ValueHolder {
-        private String value;
+    class ValueHolder<T> {
+        private T value;
 
-        public ValueHolder(String value) {
+        public ValueHolder(T value) {
             this.value = value;
         }
 
-        public String getValue() {
+        public T getValue() {
             return value;
         }
     }
@@ -28,7 +29,7 @@ public class GenericsLab3 {
 
     @Test
     public void testStringValueHolder() {
-        ValueHolder vh = new ValueHolder("Boo");
+        ValueHolder<String> vh = new ValueHolder<>("Boo");
 
         String value = vh.getValue();
         assertEquals("Boo", value);
@@ -40,11 +41,11 @@ public class GenericsLab3 {
     // class above.
     @Test
     public void testLocalDateValueHolder() {
-//        LocalDate ld = LocalDate.now();
-//        ValueHolder vh = new ValueHolder(ld);
-//
-//        LocalDate ld2 = vh.getValue();
-//
-//        assertEquals("2020", ld2.getYear());
+        LocalDate ld = LocalDate.now();
+        ValueHolder<LocalDate> vh = new ValueHolder<>(ld);
+
+        LocalDate ld2 = vh.getValue();
+
+        assertEquals(2021, ld2.getYear());
     }
 }

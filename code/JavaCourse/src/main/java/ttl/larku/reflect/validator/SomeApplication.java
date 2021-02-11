@@ -4,6 +4,10 @@ import java.util.List;
 
 public class SomeApplication {
 
+	public void getCarInfo(Car car) {
+
+	}
+
 	public static void main(String [] args) throws IllegalArgumentException, IllegalAccessException {
 		
 		

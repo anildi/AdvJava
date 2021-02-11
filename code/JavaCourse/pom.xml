@@ -94,11 +94,11 @@
 			<scope>test</scope>
 		</dependency>
 
-<!--		<dependency>-->
-<!--			<groupId>ttl</groupId>-->
-<!--			<artifactId>trywrap</artifactId>-->
-<!--			<version>1.0</version>-->
-<!--		</dependency>-->
+		<dependency>
+			<groupId>ttl</groupId>
+			<artifactId>trywrap</artifactId>
+			<version>1.0</version>
+		</dependency>
 
 <!--		<dependency>-->
 <!--			<groupId>io.vavr</groupId>-->

@@ -42,10 +42,13 @@ public class GenericsLab1 {
     // It should return the number of items drawn.
     // The goal is to make the test run successfully.
 
-    /**
-    public int drawThemAll(...) {
+    public int drawThemAll(List<? extends Shape> shapes) {
+//        shapes.add(new Circle());
+       for(Shape shape : shapes) {
+           shape.draw();
+       }
+       return shapes.size();
     }
-     */
 
 
     //TODO - Remove the @Disabled annotation on the test and
@@ -57,17 +60,17 @@ public class GenericsLab1 {
         List<Shape> shapes = new ArrayList<>();
         shapes.add(new Triangle());
         shapes.add(new Circle());
-        //num = drawThemAll(shapes);   //TODO - Line A
+        num = drawThemAll(shapes);   //TODO - Line A
         assertEquals(2, num);
 
         List<Triangle> triangles = new ArrayList<>();
         triangles.add(new Triangle());
-        //num = drawThemAll(triangles); //TODO - Line B
+        num = drawThemAll(triangles); //TODO - Line B
         assertEquals(1, num);
 
         List<Circle> circles = new ArrayList<>();
         circles.add(new Circle());
-        //num = drawThemAll(circles); //TODO - Line C
+        num = drawThemAll(circles); //TODO - Line C
         assertEquals(1, num);
     }
 }
